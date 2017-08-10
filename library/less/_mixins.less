@@ -1,0 +1,229 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of LESS' great features: 
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques like box shadow and
+border-radius.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more. 
+
+******************************************************************/
+
+/*********************
+FIX IE7 INLINE-BLOCK
+*********************/
+.fixIE7 {
+	*display:inline;
+	*zoom:1;
+}
+
+/*********************
+CLEARFIXIN'
+*********************/
+
+// Contain floats: nicolasgallagher.com/micro-clearfix-hack/
+.clearfix {
+  zoom: 1;
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+}
+
+/*********************
+TOOLS
+*********************/
+
+* { 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box; 
+}
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+@black: #000;
+@white: #FFF;
+@gold: #ffc703;
+
+.aux-800 {
+	font-family: "aaux-next-n8","aaux-next",sans-serif;
+	font-style: normal;
+	font-weight: 800;
+}
+
+.aux-900 {
+	font-family: "aaux-next-n9","aaux-next",sans-serif;
+	font-style: normal;
+	font-weight: 900;
+}
+
+.fra-700 {
+	font-family: "franklin-gothic-ext-comp-urw-n7","franklin-gothic-ext-comp-urw",sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+
+.pro-400 {
+	font-family: "proxima-nova-n4","proxima-nova",sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.pro-400-em {
+	font-family: "proxima-nova-i4","proxima-nova",sans-serif;
+	font-style: italic;
+	font-weight: 400;
+}
+
+.pro-700 {
+	font-family: "proxima-nova-n7","proxima-nova",sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+
+/*********************
+TYPOGRAPHY
+*********************/
+
+@sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+@serif: "Georgia", Cambria, Times New Roman, Times, serif;
+
+/* text alignment */
+.text-left   { text-align: left; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+/*********************
+BORDER RADIUS
+*********************/
+
+/* 
+NOTE: For older browser support (and some mobile), 
+don't use the shorthand to define *different* corners. 
+
+USAGE: .border-radius(4px); 
+
+*/
+.border-radius(@radius: 4px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+/*********************
+BACKGROUND SIZE
+*********************/
+
+/*
+USAGE: .background-size(4px, 4px); 
+*/
+
+.background-size(@xpos: 0, @ypos: 0) {
+  -webkit-background-size: @xpos @ypos;
+     -moz-background-size: @xpos @ypos;
+          background-size: @xpos @ypos;
+}
+
+
+/*********************
+TRANISTIONS
+*********************/
+
+/* .transition(all,2s); */
+.transition(@what: all, @time: 0.2s, @transition: ease-in-out) {
+	-webkit-transition: @what @time @transition;
+	-moz-transition:    @what @time @transition;
+	-ms-transition:     @what @time @transition;
+	-o-transition:      @what @time @transition;
+	transition:         @what @time @transition;
+}
+
+/*********************
+OPACITY
+*********************/
+
+.opacity(@o: 0) {
+	-webkit-opacity: @o;
+	-moz-opacity: @o;
+	filter:alpha(opacity=@o);
+	opacity:@o;
+}
+
+/*********************
+PLACEHOLDER
+*********************/
+
+.placeholder(@c: #fff) {
+	&::-webkit-input-placeholder {
+		color: @c;
+	}
+	
+	&:-moz-placeholder { /* Firefox 18- */
+	   color: @c;  
+	}
+	
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   color: @c;  
+	}
+	
+	&:-ms-input-placeholder {  
+	   color: @c;  
+	}
+}
+
+/*********************
+CALC FUNCTION :)
+*********************/
+
+.calc(@prop; @val) {
+  @{prop}: calc(~'@{val}');
+  @{prop}: -moz-calc(~'@{val}');
+  @{prop}: -webkit-calc(~'@{val}');
+  @{prop}: -o-calc(~'@{val}');
+}
+
+.calc2(@prop; @val) {
+  @{prop}: calc(~'@{val}') !important;
+  @{prop}: -moz-calc(~'@{val}') !important;
+  @{prop}: -webkit-calc(~'@{val}') !important;
+  @{prop}: -o-calc(~'@{val}') !important;
+}
+
+/*********************
+EXTRAS
+*********************/
+
+.btn.white {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 14px 39px;
+	text-align: center;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	.fra-700;
+	font-size: 20px;
+	color: #1e2225;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	background: #f6f6f6;
+
+	@media only screen and (min-width: 960px) {
+		.transition(all, .2s);
+
+		&:hover {
+			background: #e7e7e7;
+		}
+	}
+}
