@@ -27,7 +27,6 @@ Template Name: Contact Us
 
 				</div>
 			</div>
-***********************************************************************************
 
 			<div class="white-formatted-wrap">
 				<div class="center">
