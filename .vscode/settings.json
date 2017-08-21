@@ -1,0 +1,12 @@
+/******************************************************************
+This file is used to manage the less compiler. Using the EasyLESS
+extention for Visual Studio Code. This allows for sourcemapping,
+CSS minification, compressions, and mixin of all LESS subfiles.
+******************************************************************/
+
+{
+    "less.compile": {
+        "compress":  true,
+        "sourceMapFileInline": true
+    }
+}
