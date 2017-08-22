@@ -1,5 +1,5 @@
 <?php /*
-Template Name: Contact Us
+Template Name: Contact Us Template
 */ ?>
 
 <?php get_header(); ?>
@@ -31,7 +31,9 @@ Template Name: Contact Us
 			<div class="white-formatted-wrap">
 				<div class="center">
 
-					<?php the_content(); ?>
+					<div class="contact-form">
+						<?php the_content(); ?>
+					</div>
 
 				</div>
 			</div>
