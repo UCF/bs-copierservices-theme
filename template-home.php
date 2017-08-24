@@ -13,8 +13,6 @@ Template Name: Home
 			<div class="home-main-section">
 				<div class="center">
 
-					<h1><span class="small"><?php the_field('display_title_line_1'); ?></span> <?php the_field('display_title_line_2'); ?></h1>
-
 					<div class="formatted">
 
 						<?php the_field('main_content'); ?>
