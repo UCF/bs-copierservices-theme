@@ -11,7 +11,7 @@
 
 			<?php } else { ?>
 				
-				<a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_directory'); ?>/library/images/home-logo.png" alt="copier services and support" /></a>
+				<a href="<?php echo site_url(); ?>"><img class="logo-header-top" src="<?php bloginfo('template_directory'); ?>/library/images/home-logo.png" alt="copier services and support" /></a>
 				<h1><a href="<?php echo site_url(); ?>"><?php the_title(); ?></a></h1>
 
 			<?php } ?>
