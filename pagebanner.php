@@ -7,7 +7,7 @@
 
 			<?php if( is_front_page() ) { ?>
 
-				<a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_directory'); ?>/library/images/home-logo.png" alt="copier services and support" /></a>
+				<a href="<?php echo site_url(); ?>"><img class="logo-header-solo" src="<?php bloginfo('template_directory'); ?>/library/images/home-logo.png" alt="copier services and support" /></a>
 
 			<?php } else { ?>
 				
